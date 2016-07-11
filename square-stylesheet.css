@@ -524,7 +524,6 @@ input[type="color"] {
 textarea {
 	padding: 3px 8px;
 	width: 100%;
-	min-height: 100px;
 }
 
 input[type="search"] {
@@ -722,7 +721,7 @@ a:active {
 
 #primary{
 	width: 69%;
-	float: left;
+	margin: 0 auto 0 auto;
 }
 
 #secondary{
