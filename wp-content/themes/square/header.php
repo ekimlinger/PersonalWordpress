@@ -14,6 +14,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<script src="https://use.fontawesome.com/3e25f2ebc4.js"></script>
+
 <?php wp_head(); ?>
 </head>
 
@@ -40,15 +42,15 @@
 			<div class="sq-toggle-nav">
 				<span></span>
 			</div>
-			
+
 			<nav id="sq-site-navigation" class="sq-main-navigation">
-				<?php 
-				wp_nav_menu( array( 
-					'theme_location' => 'primary', 
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
 					'container_class' => 'sq-menu sq-clearfix' ,
 					'menu_class' => 'sq-clearfix',
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-				) ); 
+				) );
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
