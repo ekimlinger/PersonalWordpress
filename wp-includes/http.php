@@ -351,7 +351,7 @@ function get_http_origin() {
 function get_allowed_http_origins() {
 	$admin_origin = parse_url( admin_url() );
 	$home_origin = parse_url( home_url() );
-
+  
 	// @todo preserve port?
 	$allowed_origins = array_unique( array(
 		'http://' . $admin_origin[ 'host' ],
