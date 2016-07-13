@@ -39,7 +39,7 @@ define('DB_COLLATE', '');
 
 //Fixes broken redirect
 define('WP_HOME','http://evanwordpress.herokuapp.com');
-define('WP_SITEURL','http://evanwordpress.herokuapp.com');
+define('WP_SITEURL','http://www.evankimlinger.com');
 
 
 
