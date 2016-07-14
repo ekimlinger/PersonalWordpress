@@ -1576,7 +1576,7 @@ object {
 	right: 15px;
 	bottom: 5px;
 	height: 40px;
-	width: 40px;
+	/*width: 40px;*/
 	line-height: 40px;
 	text-align: center;
 	font-size: 15px;
