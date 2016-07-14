@@ -14,11 +14,11 @@ if(is_array($square_page_array)){
 if ( 'page' == get_option( 'show_on_front' ) ) {
     include( get_page_template() );
 }else{
-get_header(); 
+get_header();
 ?>
 <section id="sq-home-slider-section">
 	<div id="sq-bx-slider">
-	<?php for ($i=1; $i < 4; $i++) {  
+	<?php for ($i=1; $i < 4; $i++) {
 		if($i == 1){
 			$square_slider_title = get_theme_mod('square_slider_title1', __('Free WordPress Themes', 'square'));
 			$square_slider_subtitle = get_theme_mod('square_slider_subtitle1', __('Create website in no time', 'square'));
@@ -33,7 +33,7 @@ get_header();
 		?>
 		<div class="sq-slide sq-slide-count<?php echo $i; ?>">
 			<img src="<?php echo esc_url( $square_slider_image ); ?>">
-			
+
 			<?php if( $square_slider_title || $square_slider_subtitle){ ?>
 				<div class="sq-slide-caption">
 					<div class="sq-slide-cap-title animated fadeInDown">
@@ -46,7 +46,7 @@ get_header();
 				</div>
 			<?php } ?>
 		</div>
-	<?php 
+	<?php
 		}
 	} ?>
 	</div>
@@ -56,12 +56,12 @@ get_header();
 <section id="sq-featured-post-section" class="sq-section">
 	<div class="sq-container">
 		<div class="sq-featured-post-wrap sq-clearfix">
-			<?php 
+			<?php
 			$square_enable_featured_link = get_theme_mod('square_enable_featured_link', true);
 			for( $i = 1; $i < 4; $i++ ){
-				$square_featured_page_id = get_theme_mod('square_featured_page'.$i, $square_page ); 
+				$square_featured_page_id = get_theme_mod('square_featured_page'.$i, $square_page );
 				$square_featured_page_icon = get_theme_mod('square_featured_page_icon'.$i, 'fa-bell');
-			
+
 			if($square_featured_page_id){
 				$args = array( 'page_id' => $square_featured_page_id );
 				$query = new WP_Query($args);
@@ -72,24 +72,24 @@ get_header();
 						<div class="sq-featured-icon"><i class="fa <?php echo esc_attr( $square_featured_page_icon ); ?>"></i></div>
 						<h4><?php the_title(); ?></h4>
 						<div class="sq-featured-excerpt">
-						<?php 
+						<?php
 						if(has_excerpt()){
 							echo get_the_excerpt();
 						}else{
-							echo square_excerpt( get_the_content(), 120); 
+							echo square_excerpt( get_the_content(), 120);
 						}?>
 						</div>
-						<?php 
+						<?php
 						if($square_enable_featured_link){
 							?>
-							<a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><i class="fa fa-plus-square-o"></i></a>
+							<a href="<?php the_permalink(); ?>" class="sq-featured-readmore">Read More <i class="fa fa-arrow-right"></i></a>
 							<?php
 						}
 						?>
 					</div>
 				<?php
 				endwhile;
-				endif;	
+				endif;
 				wp_reset_postdata();
 				}
 			}
@@ -98,16 +98,16 @@ get_header();
 	</div>
 </section>
 
-<?php 
+<?php
 $square_disable_about_sec = get_theme_mod('square_disable_about_sec');
 if(!$square_disable_about_sec){
 ?>
 <section id="sq-about-us-section" class="sq-section">
 	<div class="sq-container sq-clearfix">
 		<div class="sq-about-sec">
-		<?php 
+		<?php
 			$args = array(
-				'page_id' => get_theme_mod('square_about_page') 
+				'page_id' => get_theme_mod('square_about_page')
 				);
 			$query = new WP_Query($args);
 			if($query->have_posts() && get_theme_mod('square_about_page')):
@@ -117,18 +117,18 @@ if(!$square_disable_about_sec){
 			<div class="sq-content"><?php the_content(); ?></div>
 			<?php
 			endwhile;
-			endif;	
+			endif;
 			wp_reset_postdata();
 		?>
 		</div>
 
-		<?php 
+		<?php
 		$square_about_image_stack = get_theme_mod('square_about_image_stack');
 		if($square_about_image_stack){
 		?>
 		<div class="sq-image-stack">
 			<ul id="sq-elasticstack" class="sq-elasticstack">
-			<?php 
+			<?php
 				$square_about_image_stack = explode(',', $square_about_image_stack);
 
 				foreach ($square_about_image_stack as $square_about_image_stack_single) {
@@ -143,7 +143,7 @@ if(!$square_disable_about_sec){
 		<?php } ?>
 	</div>
 </section>
-<?php } 
+<?php }
 
 $square_disable_tab_sec = get_theme_mod('square_disable_tab_sec');
 if(!$square_disable_tab_sec){
@@ -151,11 +151,11 @@ if(!$square_disable_tab_sec){
 <section id="sq-tab-section" class="sq-section">
 	<div class="sq-container sq-clearfix">
 		<ul class="sq-tab">
-			<?php 
+			<?php
 				for( $i = 1; $i < 6; $i++ ){
 					$square_tab_title = get_theme_mod('square_tab_title'.$i);
 					$square_tab_icon = get_theme_mod('square_tab_icon'.$i);
-					
+
 					if($square_tab_title){
 					?>
 					<li class="sq-tab-list<?php echo $i; ?>">
@@ -170,8 +170,8 @@ if(!$square_disable_tab_sec){
 		</ul>
 
 		<div class="sq-tab-content">
-			<?php 
-				for ($i = 1; $i < 6 ; $i++) { 
+			<?php
+				for ($i = 1; $i < 6 ; $i++) {
 					$square_tab_page = get_theme_mod('square_tab_page'.$i);
 					if($square_tab_page){
 					?>
@@ -188,7 +188,7 @@ if(!$square_disable_tab_sec){
 							<div class="sq-content"><?php the_content(); ?></div>
 							<?php
 								endwhile;
-							endif;	
+							endif;
 							wp_reset_postdata();
 							?>
 						</div>
@@ -214,7 +214,7 @@ if(!$square_disable_logo_sec){
 		<h2 class="sq-section-title"><?php echo esc_html( $square_logo_title ); ?></h2>
 		<?php } ?>
 
-		<?php 
+		<?php
 		$square_client_logo_image = get_theme_mod('square_client_logo_image');
 		$square_client_logo_image = explode(',', $square_client_logo_image);
 		?>
@@ -232,6 +232,6 @@ if(!$square_disable_logo_sec){
 	</div>
 </section>
 <?php } ?>
-<?php 
-get_footer(); 
-} 
+<?php
+get_footer();
+}

@@ -73,8 +73,7 @@ get_header(); ?>
 						<?php
 						if($square_enable_featured_link){
 							?>
-							<a href="<?php the_permalink(); ?>" class="sq-featured-readmore">Read More</a>
-							<a href="<?php the_permalink(); ?>" class="sq-featured-readmore"><i class="fa fa-plus-square-o"></i><h4>Read More</h4></a>
+							<a href="<?php the_permalink(); ?>" class="sq-featured-readmore">Read More <i class="fa fa-arrow-right"></i></a>
 							<?php
 						}
 						?>
